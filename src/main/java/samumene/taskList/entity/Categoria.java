@@ -1,5 +1,6 @@
 package samumene.taskList.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne
     private Usuario usuario;
 
@@ -24,6 +26,7 @@ public class Categoria {
 
     private String descricao;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "categoria")
     private List<Tarefa> tarefas;
 }

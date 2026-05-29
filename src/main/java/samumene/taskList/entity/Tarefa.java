@@ -1,5 +1,6 @@
 package samumene.taskList.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class Tarefa {
     private String titulo;
 
     @ManyToOne
+    @JsonIgnore
     private Usuario usuario;
 
     private String descricao;
